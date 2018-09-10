@@ -5,3 +5,5 @@
  * Date: 10/09/18
  * Time: 14:04
  */
+
+echo 'BOOTSTRAP';
