@@ -14,6 +14,16 @@ class Pages
      */
     public function __construct()
     {
-        echo 'Pages loaded';
+    }
+
+    public function index()
+    {
+        var_dump('This is the index page');
+    }
+
+    public function about($id = null)
+    {
+        var_dump('this is about page');
+        var_dump('with id : ' . $id);
     }
 }

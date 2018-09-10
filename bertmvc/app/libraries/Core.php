@@ -24,7 +24,7 @@ class Core
     {
         $url = $this->getUrl();
 
-        // Look in Controllers folder for first value of url var
+        // Check for controller (first part of url)
         if (file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
             $this->currentController = ucwords($url[0]);
             unset($url[0]);
@@ -35,6 +35,20 @@ class Core
 
 
         $this->currentController = new $this->currentController;
+
+        // Check for existence of method of Controller (second part of url)
+        if (isset($url[1])){
+            if (method_exists($this->currentController, $url[1])){
+                $this->currentMethod = $url[1];
+                unset($url[1]);
+            }
+        }
+
+        // Check for parameters (third part of url)
+        $this->params = $url ? array_values($url) : [];
+
+        // Callback with array of parameters
+        call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
     }
 
     /**
