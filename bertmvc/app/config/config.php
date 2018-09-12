@@ -6,7 +6,6 @@
  * Time: 11:00
  */
 
-var_dump($_ENV);
 // DB Parameters
 define('DB_HOST', 'localhost');
 define('DB_USER', getenv('DB_USER'));
