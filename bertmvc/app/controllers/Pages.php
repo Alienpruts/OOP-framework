@@ -6,7 +6,7 @@
  * Time: 17:03
  */
 
-class Pages
+class Pages extends Controller
 {
 
     /**
@@ -18,12 +18,11 @@ class Pages
 
     public function index()
     {
-        var_dump('This is the index page');
+        $this->view('hello');
     }
 
     public function about($id = null)
     {
-        var_dump('this is about page');
-        var_dump('with id : ' . $id);
+
     }
 }
