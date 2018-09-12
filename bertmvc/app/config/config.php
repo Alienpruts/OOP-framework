@@ -6,6 +6,12 @@
  * Time: 11:00
  */
 
+// DB Parameters
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'wouldntyouliketoknow?');
+define('DB_NAME', 'testmvc');
+
 // App Root
 define('APP_ROOT', dirname(dirname( __FILE__)));
 
