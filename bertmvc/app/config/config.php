@@ -6,17 +6,18 @@
  * Time: 11:00
  */
 
+var_dump($_ENV);
 // DB Parameters
 define('DB_HOST', 'localhost');
-define('DB_USER', '_YOUR_USER_');
-define('DB_PASS', '_YOUR_PASS');
-define('DB_NAME', '_YOUR_DBNAME_');
+define('DB_USER', getenv('DB_USER'));
+define('DB_PASS', getenv('DB_PASS'));
+define('DB_NAME', getenv('DB_NAME'));
 
 // App Root
 define('APP_ROOT', dirname(dirname( __FILE__)));
 
 // URL Root
-define('URL_ROOT', '_YOUR_URL');
+define('URL_ROOT', getenv('URL_ROOT'));
 
 // Site Name
-define('SITE_NAME', '_YOUR_SITENAME_');
+define('SITE_NAME', getenv('SITE_NAME'));

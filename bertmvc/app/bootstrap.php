@@ -6,6 +6,17 @@
  * Time: 14:04
  */
 
+use Dotenv\Dotenv;
+
+require_once '../vendor/autoload.php';
+
+try {
+    (new Dotenv(__DIR__))->load();
+} catch (Exception $exception) {
+    echo "Could not load .env file, check if your configuration is correct";
+    exit();
+}
+
 require_once __DIR__ . '/config/config.php';
 
 // Autoloader Core Libraries
