@@ -15,15 +15,15 @@ class Controller
     public function model($model)
     {
         // Load Model file and instantiate.
-        require_once '../models/' . ucfirst($model) . '.php';
+        require_once '../app/models/' . ucfirst($model) . '.php';
 
         return new $model();
     }
 
     public function view($view, $data = [])
     {
-        if (file_exists('../views/' . ucfirst($view) . '.php')){
-        require_once '../views/' . ucfirst($view) . '.php';
+        if (file_exists('../app/views/' . $view . '.php')){
+        require_once '../app/views/' . $view . '.php';
         } else {
             die('View does not exist!');
     }
